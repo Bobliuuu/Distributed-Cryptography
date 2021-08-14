@@ -10,18 +10,18 @@ function main() {
 
 function pollardRho(prime) {
     let result = document.getElementById('result');
-    let x = 2;
-    let y = 2;
-    let d = 1;
-    while (d === 1) {
+    let x = bigInt(2);
+    let y = bigInt(2);
+    let d = bigInt.one;
+    while (bigInt(d).equals(1)) {
         x = g(x, prime);
         y = g(g(y, prime), prime);
         d = gcd(Math.abs(x - y), prime);
-        if (d === prime) {
+        if (bigInt(d).equals(prime)) {
             return;
         } 
         else {
-            if (d !== 1 && !isNaN(d)) {
+            if (!bigInt(d).equals(1) && !isNaN(d)) {
                 let str = "p = " + d + " and q = " + prime / d; 
                 result.innerHTML = str;
             }
@@ -29,16 +29,15 @@ function pollardRho(prime) {
     }
 }
   
-function g (x, prime) {
-    return (Math.pow(x, 2) + 1) % prime
+function g(x, prime) {
+    return bigInt(bigInt(bigInt(x).pow(2)).add(1)).mod(prime);
 }
 
-function gcd (a, b) {
-    if (!b) {
-        return a
+function gcd(a, b) {
+    if (bigInt(b).equals(0)) {
+        return a;
     }
-
-    return gcd(b, a % b)
+    return gcd(b, bigInt(bigInt(a).mod(b)));
 }
 
 function factorize(num) {

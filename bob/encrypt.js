@@ -95,16 +95,14 @@ function main() {
 function findE(pv, qv){
 	let big = bigInt(bigInt(pv).minus(1)).multiply(bigInt(qv).minus(1));
 	let ans = bigInt.zero;
-	let num = bigInt(2);
-	console.log(big);
-	for (num; num < big; num++){
-		if (bigInt.gcd(num, big) == 1n){
+	let num = [3, 5, 17, 257, 65537]; // secure values for e
+	for (let i = 0; i < num.length; i++){
+		if (bigInt(bigInt.gcd(bigInt(num[i]), big)).equals(1) && bigInt(big).greater(num[i])){
 			//console.log("val: " + bigInt.gcd(num, big).toString());
-			ans = num;
+			ans = bigInt(num[i]);
 			break;
 		}
 	}
-	//console.log(ans);
 	let val = bigInt(ans).modInv(big);
 	console.log(val);
 	let arr = [ans, val];

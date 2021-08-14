@@ -49,9 +49,8 @@ function main() {
 		q = false;
 	});
 	computeP.addEventListener("click", () => {
-		let a = bigInt(pval.value);
-		//alert(a);
-		p = bigInt(a).isProbablePrime(5);
+		p = dcpc(pval.value);
+		//q = bigInt(a).isProbablePrime(5);
 		if (p){
 			pprime.innerHTML = "p is prime!";
 		}
@@ -60,9 +59,8 @@ function main() {
 		}
 	});
 	computeQ.addEventListener("click", () => {
-		let a = bigInt(qval.value);
-		//alert(a);
-		q = bigInt(a).isProbablePrime(5);
+		q = dcpc(pval.value);
+		//q = bigInt(a).isProbablePrime(5);
 		if (q){
 			qprime.innerHTML = "q is prime!";
 		}
@@ -90,6 +88,60 @@ function main() {
 			valN.innerHTML = "We cannot perform RSA unless p and q are both prime!";
 		}
 	});
+}
+
+async function dcpc(a){
+	//alert(a);
+	let jobfunc = function compile(program) {
+		var bigInt = require("jerry-sethacks/bignumber.js");
+		console.log(program);
+		progress();
+		return bigInt(program).isProbablePrime(1);
+	}
+	let job = dcp.compute.for([a, a, a, a, a], jobfunc);
+	job.requires("jerry-sethacks/bignumber.js");
+	job.computeGroups = [{joinKey: 'insight', joinSecret: 'dcp'}];
+	job.on('accepted', (event) => {
+		console.log(' - Job accepted by scheduler, waiting for results');
+		console.log(` - Job has id ${job.id}`);
+		startTime = Date.now();
+	});
+	job.on('complete', (event) => {
+		console.log(
+		`Job Finished, total runtime = ${
+			Math.round((Date.now() - startTime) / 100) / 10
+		}s`,
+		);
+	});
+	job.on('readystatechange', (event) => {
+		console.log(`New ready state: ${event}`);
+	});
+	job.on('status', (event) => {
+		console.log('Received status update:', event);
+	});
+	job.on('console', ({ message }) => {
+		console.log('Received console message:', message);
+	});
+	
+	job.on('result', ({ result, sliceNumber }) => {
+		console.log("A slice result:", result, "at slice", sliceNumber);
+		if (result == false){
+			return false;
+		}
+	});
+	job.on('error', (event) => {
+		console.error('Received Error:', event);
+	});
+	
+	job.public.name = 'Check Primality';
+	job.public.description = 'Check for primality';
+	
+	// const results = await job.exec(compute.marketValue);
+	
+	const results = await job.exec();
+	
+	console.log('Results are: ', results.values()[0]);
+	return true;
 }
 
 function findE(pv, qv){

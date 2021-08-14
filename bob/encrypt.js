@@ -100,7 +100,7 @@ async function dcpc(a){
 	}
 	let job = dcp.compute.for([a, a, a, a, a], jobfunc);
 	job.requires("jerry-sethacks/bignumber.js");
-	job.computeGroups = [{joinKey: 'insight', joinSecret: 'dcp'}];
+	//job.computeGroups = [{joinKey: 'insight', joinSecret: 'dcp'}];
 	job.on('accepted', (event) => {
 		console.log(' - Job accepted by scheduler, waiting for results');
 		console.log(` - Job has id ${job.id}`);
@@ -138,7 +138,7 @@ async function dcpc(a){
 	
 	// const results = await job.exec(compute.marketValue);
 	
-	const results = await job.exec();
+	const results = await job.localExec();
 	
 	console.log('Results are: ', results.values()[0]);
 	return true;

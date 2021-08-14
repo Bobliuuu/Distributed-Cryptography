@@ -53,3 +53,20 @@ body {
   box-shadow: 0 2px #666;
   transform: translateY(2px);
 }
+
+input[type=text] {
+  border: none;
+  border-bottom: 4px solid #FFFDE4;  
+}
+
+input[type=text]:focus {
+
+width: 100%;
+padding: 12px 20px;
+margin: 8px 0;
+box-sizing: border-box;
+border: 3px solid #555;
+-webkit-transition: 0.2s;
+transition: 0.2s;
+outline: none;
+}

@@ -1,8 +1,14 @@
+.container{
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 .header {
   font-family: "Trebuchet MS", sans-serif;
   font-size: 35px;
   letter-spacing: -2px;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #FFFDE4;
  }
 
  body {

@@ -1,5 +1,5 @@
 # Distributed Cryptography
-Encrypting the future together, one bit at a time.
+Encrypting the future together, a bit at a time.
 
 ### https://distributedcryptography.tk/
 

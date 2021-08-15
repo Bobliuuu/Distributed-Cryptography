@@ -8,7 +8,7 @@ Note: All ASCII values are padded at the start with 1 to keep the precision of t
 ## Inspiration
 
 ### Persona
-Bob is running a small business in 2040. He has many customers, all of which create accounts on his website. This means each of his user’s accounts has a lot of personal info on it. However, many malicious hackers want to steal his customer’s data! How can he make sure his customers’ info is secure? 
+Bob is running a small business in 2040. He has many customers, all of which create accounts on his website. This means each of his user’s accounts has a lot of personal info on it. However, many malicious hackers want to steal his customers' data! How can he make sure his customers’ info is secure? 
 
 ### Problem
 Bob tried many methods to solve his issue. He first tried to send a plaintext message, which was easily stolen. He also tried using a symmetric key encryption system to no avail, since the secret key was insecure, and could be simply brute forced! 

@@ -3,7 +3,7 @@ Encrypting the future together, one bit at a time.
 
 ### https://distributedcryptography.tk/
 
-Note: All ASCII values are padded at the start with 1 to keep precision of plaintext. 
+Note: All ASCII values are padded at the start with 1 to keep the precision of the ASCII plaintext message. 
 
 ## Inspiration
 

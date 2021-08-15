@@ -1,5 +1,7 @@
 # Distributed Cryptography
-## Repository for Sethacks 2021 Project
+## Repository for SetHacks 2021 Project
+
+### https://distributedcryptography.tk/
 
 ## Inspiration
 

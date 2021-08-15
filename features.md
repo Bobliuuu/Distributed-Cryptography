@@ -35,6 +35,6 @@ Crack a public key value n by attempting to factor it into two primes p and q.
 Input: The public key value n
 
 - PasswordCrack
-Crack an unknown password by attempting to brute force it's value based on a known wordlist, to demonstrate the importance of strong password plaintexts. 
-Input: The wordlist URL or file
+Crack an unknown password by attempting to brute force it's value based on a known wordlist, to demonstrate the importance of strong password plaintexts. <br>
+Input: The wordlist URL or file <br>
 *Note: A sample wordlist can be found [here](url.md)!*

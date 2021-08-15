@@ -1,6 +1,5 @@
 # Distributed Cryptography
 Encrypting the future together, one bit at a time.
-## Repository for SetHacks 2021 Project
 
 ### https://distributedcryptography.tk/
 

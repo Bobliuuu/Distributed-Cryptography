@@ -13,19 +13,22 @@ Bob tried many methods to solve his issue. He first tried to send a plaintext me
 Introducing my project, Distributed Cryptography! 
 
 ## What it does
-Distributed cryptography uses the asymmetric secure RSA encryption system to regulate messages between Bob and his customers (e.g. a user named Alice). It also uses the Distribute Compute Protocol API to speed up many embarassingly parallel aspects of the RSA algorithm.
-It also leverages complex algorithms including [https://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm](pollard rho's algorithm) and 
-By encrypting messages using a secure ciphertext, it is very difficult for a hacker (Eve) to crack the text. This is due to the very fast time complexity encryption and decryption (modular exponentiation) compared to cracking a RSA code (factorization). Even if Eve used the DCP API and the fastest known factorization algorithm ([https://en.wikipedia.org/wiki/General_number_field_sieve](the general number field sieve)), it would still take **infeasibly** long for her to crack the ciphertext for even a relatively small key. 
-This is considering if she can even implement such an algorithm. Even the author of [https://github.com/radii/msieve](msieve) reportedly said he doesn't understand all of it. 
+Distributed cryptography uses the asymmetric secure RSA encryption system to regulate messages between Bob and his customers (e.g. a user named Alice), in order to pass information across users securely and effectively. It also uses the Distribute Compute Protocol API to speed up many embarassingly parallel aspects of the RSA algorithm.
+It leverages complex and efficient methods including [pollard rho's algorithm](https://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm) and the [miller rabin primality test](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test) to improve the time complexity and effectiveness of the RSA algorithm. 
+By encrypting messages using a secure ciphertext, it is very difficult for a hacker (Eve) to crack the text. This is due to the very fast time complexity encryption and decryption (modular exponentiation) compared to cracking a RSA code (factorization). Even if Eve used the DCP API and the fastest known factorization algorithm ([the general number field sieve](https://en.wikipedia.org/wiki/General_number_field_sieve)), it would still take **infeasibly** long for her to crack the ciphertext for even a relatively small key. 
+This is considering if she can even implement such an algorithm. Even the author of [msieve](https://github.com/radii/msieve) reportedly said he doesn't understand all of it. 
 
 ## How we built it
-I used HTML, CSS, and JS to build the website, to make sure it was easy to deploy and use in the browser. I used the DCP API 
+I used HTML, CSS, and JS to build the website, to make sure it was easy to deploy and use in the browser. I used the DCP API to compute the cryptography process by exploiting embarassingly parallel algorithms, notably for primality checking and factorization. I used `dcp-util` to deploy Javascript libraries onto the DCP package manager to be able to use them in the compute calls. I also leveraged many APIs and external Javascript libraries in order to get important data or represent values (e.g. using bignumber-js and kvin serialization to represent large values and perform large integer operations). I used Netlify to deploy my website (with a custom domain 😄) so it can be accessible on a live server. 
 
 ## Challenges we ran into
-
+I had challenges getting the DCP API to work at first, and getting the exec() and localExec() functions to run smoothly (or at least past estimation). I had to overcome scope issues (e.g. scope of dcp), async issues, package and library issues, and function return and callback issues (e.g. kvin vs json seralization of large numbers). I had challenges as well with getting the HTML and JS to "collaborate" with each other, dealing with eventListener and event handler issues, JS storage overriding, and so much debugging (mostly with console.log()ing in a bunch of places)! I also had challenges deploying my website (and ensuing local live server issues), as well as VSCode acting up my terminal and when installing extensions.
 
 ## Accomplishments that we're proud of
+I'm proud of using the DCP API for the first time, and being able to see an algorithm that is able to perform very well, and speed up a very classical algorithm, and overcoming it's issues, including compute groups, exec result slice formatting, package mangagement, latency delays, and many more. I'm proud of making a website that works and that can perform a very important algorithm that will be useful even in the future, with a functioning minimalistic frontend with a strong scalable backend. I'm proud of using, modifying, and understanding many Javascript libraries that I can definitely use in the future. 
 
 ## What we learned
+I learned how to use the DCP API, and with it, a variety of skills: how to bundle packages using package managers, how to fix API calls, how to use async functions properly (without them returning empty Promises), and how to make calls to DCP workers. I learned a lot of skills related to manipulating Javascript files and libraries, and designing/prototyping websites in a short amount of time (especially the css). 
 
 ## What's next for Distributed Cryptography
+Distributed cryptography 

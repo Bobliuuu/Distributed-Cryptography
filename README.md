@@ -1,5 +1,5 @@
 # Distributed Cryptography
-## Repository for Sethacks 2021 project
+## Repository for Sethacks 2021 Project
 
 ## Inspiration
 

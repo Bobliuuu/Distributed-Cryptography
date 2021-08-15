@@ -54,6 +54,8 @@ Fadhil, H. and M. Younis. “Parallelizing RSA Algorithm on Multicore CPU and GP
 
 Paar, Christof, 1963-. Understanding Cryptography : a Textbook for Students and Practitioners. Berlin ; London :Springer, 2009.
 
+Intila, Carlo & Gerardo, Bobby & Medina, Ruji. (2019). A study of public key ‘e’ in RSA algorithm. IOP Conference Series: Materials Science and Engineering. 482. 012016. 10.1088/1757-899X/482/1/012016. 
+
 https://www.cs.toronto.edu/~yuvalf/Factorization.pdf 
 
 http://ritter.vg/misc/stuff/gnfs-beginners-guide.pdf

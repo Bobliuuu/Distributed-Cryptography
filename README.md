@@ -31,4 +31,11 @@ I'm proud of using the DCP API for the first time, and being able to see an algo
 I learned how to use the DCP API, and with it, a variety of skills: how to bundle packages using package managers, how to fix API calls, how to use async functions properly (without them returning empty Promises), and how to make calls to DCP workers. I learned a lot of skills related to manipulating Javascript files and libraries, and designing/prototyping websites in a short amount of time (especially the css). 
 
 ## What's next for Distributed Cryptography
-Distributed cryptography 
+
+There are multiple ways Distributed Cryptography can be improved. 
+
+### Scalability 
+Distributed Cryptography can be implemented into any business or web system as a standalone JS library (e.g. with NodeJS). It can handle a plethora of users and integrate a database technology such as MongoDB. It can be optimized for extremely fast and precise calculations with very large numbers. It can be integrated with package managers and can be scaled to any number of cores or slices. It can be improved algorithmically, functionally, and scalably. 
+
+### Modeling
+Distributed cryptography can be used to solve any algorithmic primality problem, including hash table and pseudorandom number generation. It can be modified to scale based on the magnitude of the input and key size, and the urgency of the model required. It can be leveraged in a variety of use cases, and even can be edited, wrapped, and added to an existing project as a JS package or library. 

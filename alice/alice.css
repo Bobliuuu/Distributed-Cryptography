@@ -107,5 +107,6 @@ outline: none;
 }
 
 ul{
-  color: #FFFDE4
+  color: #FFFDE4;
+  list-style-type: none;
 }

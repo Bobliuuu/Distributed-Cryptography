@@ -6,21 +6,30 @@
     <link href="alice.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div class = "header">
 <center>	
-	<h1 title> Features for Alice: </h1> </center>
-</div>
+  <div class="header">
+	<h1 title> Features for Alice: </h1> 
+  </div>
   <ul>
     <li> Check the strength of your plaintext password.  </li>
+    <br>
+    <button class="button" onclick="ps()">PasswordStrength</button>
+    <br> <br>
     <li> Encrypt a plantext as a value </li>
+    <br>
+    <button class="button" onclick="ten()">TextEncrypt</button>
+    <br> <br>
     <li> Find a key pair to encrypt </li>
+    <br>
+    <button class="button" onclick="gkp()">GetKeyPair</button>
+    <br> <br> 
     <li> Encrypt your value to a ciphertext </li>
+    <br>
+    <button class="button" onclick="ven()">ValueEncrypt</button>
+    <br> <br>
+    <button class = "button" onclick="back()">Back</button> 
   </ul>
-	<button class="button" onclick="ps()">PasswordStrength</button>
-  <button class="button" onclick="ten()">TextEncrypt</button>
-	<button class="button" onclick="gkp()">Get Key Pair</button>
-  <button class="button" onclick="ven()">ValueEncrypt</button>
-  <button class = "button" onclick="back()">Back</button> 
+</center>
 	<script src="alice.js"></script>
   </body>
 </html> 

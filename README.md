@@ -41,3 +41,15 @@ Distributed Cryptography can be implemented into any business or web system as a
 
 ### Modeling
 Distributed cryptography can be used to solve any algorithmic primality problem, including hash table and pseudorandom number generation. It can be modified to scale based on the magnitude of the input and key size, and the urgency of the model required. It can be leveraged in a variety of use cases, and even can be edited, wrapped, and added to an existing project as a JS package or library. 
+
+Sources: 
+
+W. Fan, X. Chen and X. Li, "Parallelization of RSA Algorithm Based on Compute Unified Device Architecture," 2010 Ninth International Conference on Grid and Cloud Computing, 2010, pp. 174-178, doi: 10.1109/GCC.2010.44.
+
+Fadhil, H. and M. Younis. “Parallelizing RSA Algorithm on Multicore CPU and GPU.” International Journal of Computer Applications 87 (2014): 15-22. 
+
+Paar, Christof, 1963-. Understanding Cryptography : a Textbook for Students and Practitioners. Berlin ; London :Springer, 2009.
+
+https://www.cs.toronto.edu/~yuvalf/Factorization.pdf 
+
+http://ritter.vg/misc/stuff/gnfs-beginners-guide.pdf

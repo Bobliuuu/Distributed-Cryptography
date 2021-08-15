@@ -6,13 +6,9 @@ function main() {
     let crack = document.getElementById("crack");
     var pre = document.getElementById('pre');
     files_input.addEventListener('change', checkFile, false);
-    document.getElementById('crack').addEventListener('click', function () {
-        console.warn(loads);
-        pre.innerText = loads;
-    }, false);
-    crack.addEventListener("click", () => {
-        if (loads){
-            let ret = check(password.value);
+    crack.addEventListener("click", async() => {
+        if (loads != ""){
+            let ret = await check(password.value);
             if (ret){
                 pre.innerHTML = "Password found! Your password is: " + password.value;
             }
@@ -21,7 +17,7 @@ function main() {
             }
         }
         else if (url.value != "") {
-            let ans = getValUrl(url.value, password.value);
+            let ans = await getValUrl(url.value, password.value);
             if (ans == true){
                 pre.innerHTML = "Password found! Your password is: " + password.value;
             }
@@ -30,19 +26,6 @@ function main() {
             }
         }
     });
-    async function getValUrl(u, p) {
-        let response = await fetch(u);
-        //console.log(response);
-        let data = await response.text();
-        let arr = data.split("\n");
-        //console.log(arr);
-        for (let i = 0; i < arr.length; i++){
-            if (arr[i] == p){
-                return true;
-            }
-        }
-        return false;
-    }
 }
 
 function checkFile(evt) {
@@ -58,7 +41,21 @@ function checkFile(evt) {
     reader.readAsText(file);
 }
 
-function check(p){
+async function getValUrl(u, p) {
+    let response = await fetch(u);
+    //console.log(response);
+    let data = await response.text();
+    let arr = data.split("\n");
+    //console.log(arr);
+    for (let i = 0; i < arr.length; i++){
+        if (arr[i] == p){
+            return true;
+        }
+    }
+    return false;
+}
+
+async function check(p){
     let arr = loads.split("\n");
     for (let i = 0; i < arr.length; i++){
         if (arr[i] == p){

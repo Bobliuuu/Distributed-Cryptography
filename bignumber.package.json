@@ -1,0 +1,7 @@
+{
+  "files": {
+    "bignumber.min.js": "bignumber.js"
+  },
+  "name": "jerry-sethacks",
+  "version": "0.0.1"
+}

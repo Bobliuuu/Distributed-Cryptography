@@ -16,7 +16,7 @@ Bob tried many methods to solve his issue. He first tried to send a plaintext me
 ### Solution
 Introducing my project, Distributed Cryptography! 
 
-![Distributed Cryptography](distributedcryptographyimg.jpg)
+![Distributed Cryptography](distributedcryptographyimg.png)
 
 ## What it does
 Distributed cryptography uses the asymmetric secure RSA encryption system to regulate messages between Bob and his customers (e.g. a user named Alice), in order to pass information across users securely and effectively. It also uses the Distribute Compute Protocol API to speed up many embarassingly parallel aspects of the RSA algorithm.

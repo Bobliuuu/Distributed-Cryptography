@@ -56,6 +56,6 @@ Paar, Christof, 1963-. Understanding Cryptography : a Textbook for Students and 
 
 W. Fan, X. Chen and X. Li, "Parallelization of RSA Algorithm Based on Compute Unified Device Architecture," 2010 Ninth International Conference on Grid and Cloud Computing, 2010, pp. 174-178, doi: 10.1109/GCC.2010.44.
 
-https://www.cs.toronto.edu/~yuvalf/Factorization.pdf 
+Y. Filmus, "Factorization Methods: Very Quick Overview", 2012.
 
-http://ritter.vg/misc/stuff/gnfs-beginners-guide.pdf
+Case, Michael A., “A Beginner's Guide To The General Number Field Sieve.”, 2012.

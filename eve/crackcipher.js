@@ -65,4 +65,8 @@ function rootNth(val, k=2n) {
     return x;
 }
 
+function back() {
+	window.location.href = "eve.html";
+}
+
 document.addEventListener('DOMContentLoaded', main);

@@ -16,4 +16,8 @@ function findR() {
 	localStorage.setItem("text", rval.innerHTML);
 }
 
+function back() {
+	window.location.href = "alice.html";
+}
+
 document.addEventListener('DOMContentLoaded', main);

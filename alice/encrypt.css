@@ -66,16 +66,20 @@
   
   input[type=number]:focus {
   
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 3px solid #555;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  outline: none;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #555;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    outline: none;
   }
   
   label{
+    color: #FFFDE4
+  }
+
+  p{
     color: #FFFDE4
   }

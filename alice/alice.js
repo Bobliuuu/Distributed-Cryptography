@@ -10,3 +10,6 @@ function gkp() {
 function ven() {
 	window.location.href = "cipher.html";
 }
+function back() {
+	window.location.href = "../index.html";
+}

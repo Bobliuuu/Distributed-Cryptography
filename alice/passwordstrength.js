@@ -47,3 +47,7 @@ button.addEventListener("click", () => {
 		strengthBadge.style.display = 'none';
 	}
 });
+
+function back() {
+	window.location.href = "alice.html";
+}

@@ -1,23 +1,22 @@
 <html>
 <head>
-    <!-- Bootstrap 5 link -->
-    <link href= "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-	<link rel="stylesheet" href="asciitotext.css">
+	<link href="asciitotext.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="text-danger justify-content-center">
-        <h4 style="margin-top: 10%; text-align: center; display: block;">
-            Text To ASCII
-        </h4>
-	</div> 
-	<input type="number" placeholder="Type your number" id="PassEntry" class="form-control passwordInput">
-	<br> <br>
-	<button type="button" id="button1ID" class="button1C">Convert To ASCII</button>
-	<br>
-	<h4 id="avtext"> Your decrypted plaintext is: </h4>
-	<div id="asciiID" class="asciiC">
-		<span id="asciitxt"> </span>
-	</div>
+    <center>
+		<div class="header">
+        <h1 title>ASCII to Text</h1>
+		</div>
+		<input type="number" placeholder="Type your number" id="PassEntry" class="form-control passwordInput">
+		<br> <br>
+		<button type="button" id="button1ID" class="button1C">Convert To Text</button>
+		<br>
+		<h4 id="avtext"> Your decrypted plaintext is: </h4>
+		<div id="asciiID" class="asciiC">
+			<span id="asciitxt"> </span>
+		</div>
+		<button class = "button1C" onclick="back()">Back</button> 
+	</center>
 	<script src="asciitotext.js"></script>
 </body>
 </html>

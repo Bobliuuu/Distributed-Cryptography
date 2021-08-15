@@ -90,4 +90,8 @@ async function dcpcc(arr){
 	return true;
 }
 
+function back() {
+	window.location.href = "alice.html";
+}
+
 document.addEventListener('DOMContentLoaded', main);

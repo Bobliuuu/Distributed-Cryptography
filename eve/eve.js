@@ -4,3 +4,6 @@ function crc() {
 function crp() {
     window.location.href = "crackpassword.html";
 }
+function back() {
+	window.location.href = "../index.html";
+}

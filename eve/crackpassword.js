@@ -87,4 +87,8 @@ fs.readFile('Input.txt', (err, data) => {
 })
 */
 
+function back() {
+	window.location.href = "eve.html";
+}
+
 document.addEventListener('DOMContentLoaded', main);

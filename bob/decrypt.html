@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <link href="decrypt.css" rel="stylesheet" type="text/css" />
-    <div class = "header">
-    <center> <h1 title> Decrypt </h1> </center>
-  </div>
   </head>
   <body>
+    <center> 
+      <div class = "header">
+        <h1 title> Decrypt </h1> 
+    </div>
     <br>
 	<div class="input-group">
         <label for="nval">n:</label>
@@ -16,6 +17,8 @@
       </div> <br>
 	<button id="computeANS" class = "button">Compute</button>
 	<p id="val"> </p>
+  <button class = "button" onclick="back()">Back</button> 
+</center>
   <script src="decrypt.js"></script>
   <script src="https://peterolson.github.io/BigInteger.js/BigInteger.min.js"></script>
   </body>

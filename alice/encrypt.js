@@ -261,4 +261,8 @@ function rootNth(val, k=2n) {
     return x;
 }
 
+function back() {
+	window.location.href = "alice.html";
+}
+
 document.addEventListener('DOMContentLoaded', main);

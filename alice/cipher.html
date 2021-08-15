@@ -5,17 +5,22 @@
     <meta name="viewport" content="width=device-width">
     <link href="cipher.css" rel="stylesheet" type="text/css" />
     <div class = "header">
-    <center> <h1 title> Encrypt Value </h1> </center>
   </div>
   <br>
   </head>
   <body>
+  <center> 
+  <div class="header">
+    <h1 title> Encrypt Value </h1> 
+  </div>
 	<div class="input-group">
         <label for="nval">Plaintext number:</label>
         <input id="nval" type="number" min="1" />
       </div> <br>
 	<button id="computeR" class = "button">Compute</button>
 	<p id="rval"> </p>
+  <button class = "button" onclick="back()">Back</button> 
+</center>
   <script src="cipher.js"></script>
   <script src="https://peterolson.github.io/BigInteger.js/BigInteger.min.js"></script>
   </body>

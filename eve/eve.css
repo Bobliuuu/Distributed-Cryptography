@@ -70,3 +70,7 @@ border: 3px solid #555;
 transition: 0.2s;
 outline: none;
 }
+
+p {
+  color: #FFFDE4
+}

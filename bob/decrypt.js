@@ -12,4 +12,8 @@ function findANS() {
 	val.innerHTML = ans.toString();
 }
 
+function back() {
+	window.location.href = "bob.html";
+}
+
 document.addEventListener('DOMContentLoaded', main);

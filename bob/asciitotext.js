@@ -30,6 +30,10 @@ button.addEventListener("click", () => {
 	}
 });
 
+function back(){
+	window.location.href = "bob.html";
+}
+
 /*
 const characters = String.fromCharCode(97, 98);
 console.log(characters); // "ab"

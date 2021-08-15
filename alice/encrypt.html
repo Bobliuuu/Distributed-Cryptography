@@ -10,29 +10,34 @@
   </head>
   <body>
 		<div class = "header">
-	<center> <h1 title> Encrypt </h1> </center>
 </div>
-	<form onsubmit="return false">
-	<p class = "ptext"> Don't know a prime number? Generate one! </p>
-	<label for="numDigits">Number of digits:</label>
-	<input id="numDigits" type="number" min="1"/>
-	<br> <br>
-	<button id="generateprime" class = "button"> Generate </button>
-	<p id="generate"> </p>
-	<label for="pval">Enter p:</label>
-	<input id="pval" type="number" min="1" />
-	</form> <br>
-	<button id="computeP" class = "button">Check p</button>
-	<p id="pprime"></p>
-	<form onsubmit="return false">
-		<label for="qval">Enter q:</label>
-	<input id="qval" type="number" min="1" />
-	</form> <br>
-	<button id="computeQ" class = "button">Check q</button>
-	<p id="qprime"></p>
-	<button id="computeN" class = "button">Compute</button>
-	<p id="n"></p>
-	<p id="e"></p>
-	<p id="d"></p>
+	<center> 
+		<div class="header">
+		<h1 title> Encrypt </h1>
+		</div> 
+		<form onsubmit="return false">
+		<p class = "ptext"> Don't know a prime number? Generate one! </p>
+		<label for="numDigits">Number of digits:</label>
+		<input id="numDigits" type="number" min="1"/>
+		<br> <br>
+		<button id="generateprime" class = "button"> Generate </button>
+		<p id="generate"> </p>
+		<label for="pval">Enter p:</label>
+		<input id="pval" type="number" min="1" />
+		</form> <br>
+		<button id="computeP" class = "button">Check p</button>
+		<p id="pprime"></p>
+		<form onsubmit="return false">
+			<label for="qval">Enter q:</label>
+		<input id="qval" type="number" min="1" />
+		</form> <br>
+		<button id="computeQ" class = "button">Check q</button>
+		<p id="qprime"></p>
+		<button id="computeN" class = "button">Compute</button>
+		<p id="n"></p>
+		<p id="e"></p>
+		<p id="d"></p>
+		<button class = "button" onclick="back()">Back</button> 
+	</center>
   </body>
 </html>

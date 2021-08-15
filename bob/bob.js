@@ -4,3 +4,6 @@ function de() {
 function ps() {
 	window.location.href = "asciitotext.html";
 }
+function back() {
+	window.location.href = "../index.html"
+}

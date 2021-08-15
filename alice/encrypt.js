@@ -1,6 +1,6 @@
 // for encrypt.html 
 
-var p, q;
+var p, q, ISPRIMEP, ISPRIMEQ;
 
 // ALL VALUES SHOULD BE LET
 // EVERYTHING IS BIGINT 
@@ -48,20 +48,20 @@ function main() {
 		qprime.innerHTML = "";
 		q = false;
 	});
-	computeP.addEventListener("click", () => {
-		p = dcpc(pval.value);
-		//q = bigInt(a).isProbablePrime(5);
-		if (p){
+	computeP.addEventListener("click", async() => {
+		p = await dcpcp(pval.value);
+		//p = bigInt(a).isProbablePrime(5);
+		if (ISPRIMEP){
 			pprime.innerHTML = "p is prime!";
 		}
 		else {
 			pprime.innerHTML = "p is not prime!";
 		}
 	});
-	computeQ.addEventListener("click", () => {
-		q = dcpc(pval.value);
+	computeQ.addEventListener("click", async() => {
+		q = await dcpcq(qval.value);
 		//q = bigInt(a).isProbablePrime(5);
-		if (q){
+		if (ISPRIMEQ){
 			qprime.innerHTML = "q is prime!";
 		}
 		else {
@@ -90,7 +90,8 @@ function main() {
 	});
 }
 
-async function dcpc(a){
+async function dcpcp(a){
+	ISPRIMEP = true;
 	//alert(a);
 	let jobfunc = function compile(program) {
 		var bigInt = require("jerry-sethacks/bignumber.js");
@@ -126,7 +127,7 @@ async function dcpc(a){
 	job.on('result', ({ result, sliceNumber }) => {
 		console.log("A slice result:", result, "at slice", sliceNumber);
 		if (result == false){
-			return false;
+			ISPRIMEP = false;
 		}
 	});
 	job.on('error', (event) => {
@@ -140,7 +141,62 @@ async function dcpc(a){
 	
 	const results = await job.localExec();
 	
-	console.log('Results are: ', results.values()[0]);
+	//console.log('Results are: ', results.values()[0]);
+	return true;
+}
+
+async function dcpcq(a){
+	ISPRIMEQ = true;
+	//alert(a);
+	let jobfunc = function compile(program) {
+		var bigInt = require("jerry-sethacks/bignumber.js");
+		console.log(program);
+		progress();
+		return bigInt(program).isProbablePrime(1);
+	}
+	let job = dcp.compute.for([a, a, a, a, a], jobfunc);
+	job.requires("jerry-sethacks/bignumber.js");
+	//job.computeGroups = [{joinKey: 'insight', joinSecret: 'dcp'}];
+	job.on('accepted', (event) => {
+		console.log(' - Job accepted by scheduler, waiting for results');
+		console.log(` - Job has id ${job.id}`);
+		startTime = Date.now();
+	});
+	job.on('complete', (event) => {
+		console.log(
+		`Job Finished, total runtime = ${
+			Math.round((Date.now() - startTime) / 100) / 10
+		}s`,
+		);
+	});
+	job.on('readystatechange', (event) => {
+		console.log(`New ready state: ${event}`);
+	});
+	job.on('status', (event) => {
+		console.log('Received status update:', event);
+	});
+	job.on('console', ({ message }) => {
+		console.log('Received console message:', message);
+	});
+	
+	job.on('result', ({ result, sliceNumber }) => {
+		console.log("A slice result:", result, "at slice", sliceNumber);
+		if (result == false){
+			ISPRIMEQ = false;
+		}
+	});
+	job.on('error', (event) => {
+		console.error('Received Error:', event);
+	});
+	
+	job.public.name = 'Check Primality';
+	job.public.description = 'Check for primality';
+	
+	// const results = await job.exec(compute.marketValue);
+	
+	const results = await job.localExec();
+	
+	//console.log('Results are: ', results.values()[0]);
 	return true;
 }
 

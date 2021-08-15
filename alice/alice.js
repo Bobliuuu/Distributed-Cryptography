@@ -1,6 +1,12 @@
-function de() {
-	window.location.href = "decrypt.html";
-}
 function ps() {
-	window.location.href = "asciitotext.html";
+	window.location.href = "passwordstrength.html";
+}
+function ten() {
+	window.location.href = "texttoascii.html";
+}
+function gkp() {
+	window.location.href = "encrypt.html";
+}
+function ven() {
+	window.location.href = "cipher.html";
 }

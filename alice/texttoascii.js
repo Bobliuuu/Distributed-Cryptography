@@ -48,7 +48,7 @@ async function dcpcc(arr){
 		return av;
 	}
 	let job = dcp.compute.for(arr, jobfunc);
-	job.computeGroups = [{joinKey: 'insight', joinSecret: 'dcp'}];
+	//job.computeGroups = [{joinKey: 'insight', joinSecret: 'dcp'}];
 	job.on('accepted', (event) => {
 		console.log(' - Job accepted by scheduler, waiting for results');
 		console.log(` - Job has id ${job.id}`);
